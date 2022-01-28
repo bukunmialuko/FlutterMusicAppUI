@@ -11,4 +11,8 @@ class Assets {
   static const SEARCH_UNSELECTED_TAB = "assets/svg/search.svg";
   static const MUSIC_UNSELECTED_TAB = "assets/svg/music.svg";
   static const BOOKMARK_UNSELECTED_TAB = "assets/svg/bookmark.svg";
+
+  static const SKIP_BACKWARD = "assets/svg/skip_bkwd.svg";
+  static const SKIP_FORWARD = "assets/svg/skip_fwd.svg";
+  static const PAUSE = "assets/png/pause.png";
 }

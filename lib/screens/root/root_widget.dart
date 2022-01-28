@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app_ui/screens/bookmark/bookmark_screen.dart';
+import 'package:music_app_ui/screens/playing/playing_widget.dart';
 import 'package:music_app_ui/screens/root/bottom_nav.dart';
 import 'package:music_app_ui/screens/home/home_screen.dart';
 import 'package:music_app_ui/screens/playlist/playlist_screen.dart';
@@ -37,6 +38,10 @@ class _RootWidgetState extends State<RootWidget> {
             isCurrent: currentTab == Tabs.saved,
             key: Key(Tabs.saved.name),
           ),
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: PlayingWidget(),
+          )
         ],
       ),
       bottomNavigationBar: BottomNav(
