@@ -5,15 +5,24 @@ import 'package:music_app_ui/screens/splashscreen/splash_screen.dart';
 
 import 'fade_route.dart';
 
-const String splash = '/splash';
-const String login = '/login';
-const String home = '/home';
+class ScreenRouter {
+  static const String root = '/';
+  static const String login = '/login';
+  static const String home = '/home';
 
-var routes = (RouteSettings settings) {
-  switch (settings.name) {
-    case splash:
-      return FadeRoute(
-        page: const SplashScreen(),
-      );
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case root:
+        return FadeRoute(
+          page: const SplashScreen(),
+        );
+
+      default:
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+              body:
+                  Center(child: Text('No route defined for ${settings.name}'))),
+        );
+    }
   }
-};
+}
