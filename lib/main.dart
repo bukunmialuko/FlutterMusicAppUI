@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
-import 'package:music_app_ui/screens/home/home_screen.dart';
 import 'package:music_app_ui/util/navigation/navigation_service.dart';
 import 'package:music_app_ui/util/navigation/routes.dart';
 import 'package:music_app_ui/util/navigation/screen_router.dart';
@@ -15,7 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await ServiceLocator().setUp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -35,13 +34,10 @@ class MyApp extends StatelessWidget {
         supportedLocales: S.delegate.supportedLocales,
         title: 'Music App Ui',
         debugShowCheckedModeBanner: false,
-        // theme: ThemeData(),
-        // themeMode: ThemeMode.light,
+        theme: ThemeData(),
+        themeMode: ThemeMode.light,
         navigatorKey: GetIt.I.get<NavigationService>().navigatorKey,
-        home: HomeScreen(
-          isCurrent: true,
-        ),
-        // initialRoute: Routes.home,
+        initialRoute: Routes.home,
         onGenerateRoute: ScreenRouter.generateRoute,
       ),
     );

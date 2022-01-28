@@ -19,7 +19,7 @@ class _RootWidgetState extends State<RootWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        fit: StackFit.expand,
+        // fit: StackFit.expand,
         children: [
           HomeScreen(
             isCurrent: currentTab == Tabs.home,

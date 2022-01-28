@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BookMarkScreen extends StatefulWidget {
   final bool isCurrent;
@@ -15,7 +17,24 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
     return Offstage(
         offstage: !widget.isCurrent,
         child: Scaffold(
-          backgroundColor: Colors.yellow,
+          appBar: AppBar(
+            title: Text(
+              "Saved Collection",
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                  fontSize: 26.sp,
+                  color: Colors.white,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            automaticallyImplyLeading: true,
+            centerTitle: false,
+            backgroundColor: Colors.black,
+            elevation: 0,
+          ),
+          backgroundColor: Colors.black,
           body: SafeArea(
             child: Column(
               children: [

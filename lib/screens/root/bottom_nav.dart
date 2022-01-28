@@ -27,11 +27,11 @@ extension TabExt on Tabs {
       case Tabs.home:
         return Assets.HOME_SELECTED_TAB;
       case Tabs.search:
-        return Assets.MENU_SELECTED_TAB;
+        return Assets.SEARCH_SELECTED_TAB;
       case Tabs.playlist:
-        return Assets.INBOX_SELECTED_TAB;
+        return Assets.MUSIC_SELECTED_TAB;
       case Tabs.saved:
-        return Assets.ACCOUNT_SELECTED_TAB;
+        return Assets.BOOKMARK_SELECTED_TAB;
       default:
         return "";
     }
@@ -42,11 +42,11 @@ extension TabExt on Tabs {
       case Tabs.home:
         return Assets.HOME_UNSELECTED_TAB;
       case Tabs.search:
-        return Assets.MENU_UNSELECTED_TAB;
+        return Assets.SEARCH_UNSELECTED_TAB;
       case Tabs.playlist:
-        return Assets.INBOX_UNSELECTED_TAB;
+        return Assets.MUSIC_UNSELECTED_TAB;
       case Tabs.saved:
-        return Assets.ACCOUNT_UNSELECTED_TAB;
+        return Assets.BOOKMARK_UNSELECTED_TAB;
       default:
         return "";
     }
@@ -56,8 +56,9 @@ extension TabExt on Tabs {
 class BottomNav extends StatelessWidget {
   final Tabs currentTab;
   final ValueChanged<Tabs> didSelectTab;
-
-  BottomNav({required this.currentTab, required this.didSelectTab});
+  const BottomNav(
+      {Key? key, required this.currentTab, required this.didSelectTab})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,11 +66,14 @@ class BottomNav extends StatelessWidget {
       height: Platform.isIOS ? 85.h : 65.h,
       child: BottomNavigationBar(
           // currentIndex: ,
-          unselectedLabelStyle: inActiveTextStyle(context),
-          selectedLabelStyle: activeTextStyle(context),
-          backgroundColor: Colors.green,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
+          elevation: 0,
+          unselectedLabelStyle: const TextStyle(
+              fontSize: 12, fontWeight: FontWeight.w600, height: 1.4),
+          selectedLabelStyle: const TextStyle(
+              fontSize: 12, fontWeight: FontWeight.w600, height: 1.4),
+          backgroundColor: Colors.black,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
             didSelectTab(Tabs.values.toList()[index]);
@@ -83,23 +87,7 @@ class BottomNav extends StatelessWidget {
       icon: SvgPicture.asset(
           currentTab == tab ? tab.selectedIcon : tab.unSelectedIcon),
       // ignore: deprecated_member_use
-      title: Container(
-        child: Text(tab.name,
-            style: currentTab == tab
-                ? activeTextStyle(context)
-                : inActiveTextStyle(context)),
-      ),
+      title: Text(tab.name),
     );
   }
-
-  activeTextStyle(context) => TextStyle(
-      fontSize: 12,
-      color: Theme.of(context).primaryColor,
-      fontWeight: FontWeight.w600,
-      height: 1.4);
-  inActiveTextStyle(context) => TextStyle(
-      fontSize: 12,
-      color: const Color(0XFFD4E1F5),
-      fontWeight: FontWeight.w600,
-      height: 1.4);
 }

@@ -16,7 +16,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Offstage(
       offstage: !widget.isCurrent,
       child: Scaffold(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.black,
           body: SafeArea(
             child: Column(
               children: [

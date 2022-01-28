@@ -15,7 +15,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
     return Offstage(
         offstage: !widget.isCurrent,
         child: Scaffold(
-          backgroundColor: Colors.purple,
+          backgroundColor: Colors.black,
           body: SafeArea(
             child: Column(
               children: [
