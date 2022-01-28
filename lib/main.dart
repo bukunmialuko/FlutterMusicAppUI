@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
+import 'package:music_app_ui/screens/home/home_screen.dart';
+import 'package:music_app_ui/util/navigation/navigation_service.dart';
+import 'package:music_app_ui/util/navigation/routes.dart';
+import 'package:music_app_ui/util/navigation/screen_router.dart';
 
 import 'di/service_locator.dart';
-import 'util/navigation/navigation_service.dart';
-import 'util/navigation/routes.dart';
+import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await ServiceLocator().setUp();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,13 +26,22 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: () => MaterialApp(
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         title: 'Music App Ui',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        themeMode: ThemeMode.light,
+        debugShowCheckedModeBanner: false,
+        // theme: ThemeData(),
+        // themeMode: ThemeMode.light,
         navigatorKey: GetIt.I.get<NavigationService>().navigatorKey,
-        initialRoute: ScreenRouter.root,
+        home: HomeScreen(
+          isCurrent: true,
+        ),
+        // initialRoute: Routes.home,
         onGenerateRoute: ScreenRouter.generateRoute,
       ),
     );

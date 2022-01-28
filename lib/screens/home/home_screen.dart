@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isCurrent;
@@ -12,8 +13,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
+    return Offstage(
+      offstage: !widget.isCurrent,
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Text(
+                "Home",
+                style: TextStyle(color: Colors.red, fontSize: 18.sp),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

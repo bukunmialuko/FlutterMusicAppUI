@@ -12,8 +12,20 @@ class PlayListScreen extends StatefulWidget {
 class _PlayListScreenState extends State<PlayListScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-    );
+    return Offstage(
+        offstage: !widget.isCurrent,
+        child: Scaffold(
+          backgroundColor: Colors.purple,
+          body: SafeArea(
+            child: Column(
+              children: [
+                Text(
+                  "Playlist",
+                  style: TextStyle(color: Colors.red),
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

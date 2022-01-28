@@ -12,8 +12,20 @@ class BookMarkScreen extends StatefulWidget {
 class _BookMarkScreenState extends State<BookMarkScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-    );
+    return Offstage(
+        offstage: !widget.isCurrent,
+        child: Scaffold(
+          backgroundColor: Colors.yellow,
+          body: SafeArea(
+            child: Column(
+              children: [
+                Text(
+                  "Bookmark",
+                  style: TextStyle(color: Colors.red),
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

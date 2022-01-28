@@ -13,8 +13,20 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
+    return Offstage(
+      offstage: !widget.isCurrent,
+      child: Scaffold(
+          backgroundColor: Colors.green,
+          body: SafeArea(
+            child: Column(
+              children: [
+                Text(
+                  "Search",
+                  style: TextStyle(color: Colors.red),
+                )
+              ],
+            ),
+          )),
     );
   }
 }
