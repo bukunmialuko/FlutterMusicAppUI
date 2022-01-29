@@ -145,7 +145,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 17.h),
+                      SizedBox(height: 9.h),
                       Text(
                         "Album - ${album.songs} songs - ${album.year}",
                         style: GoogleFonts.montserrat(
