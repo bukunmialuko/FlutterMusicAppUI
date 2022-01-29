@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app_ui/models/album_model.dart';
 import 'package:music_app_ui/res/assets.dart';
 import 'package:music_app_ui/res/styles.dart';
-import 'package:music_app_ui/screens/root/root_widget.dart';
 
 class SearchScreen extends StatefulWidget {
   final bool isCurrent;
@@ -15,8 +15,9 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  List<SearchModel> models = [
-    SearchModel(
+  List<AlbumModel> models = [
+    AlbumModel(
+      id: 1,
       image: "assets/png/home/home1.png",
       title: 'Satisfied',
       artist: 'Mercy Chinwo',
@@ -26,7 +27,8 @@ class _SearchScreenState extends State<SearchScreen> {
       songs: 2,
       like: 2,
     ),
-    SearchModel(
+    AlbumModel(
+      id: 2,
       image: "assets/png/home/home2.png",
       title: 'The Cross: My Gaze',
       artist: 'Mercy Chinwo',
@@ -63,7 +65,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: const Icon(Icons.search, color: Colors.black),
                       ),
-                      prefixIconConstraints: BoxConstraints(maxHeight: 20.w, maxWidth: 35.w),
+                      prefixIconConstraints:
+                          BoxConstraints(maxHeight: 20.w, maxWidth: 35.w),
                       hintText: "Mercy Chinwo",
                       // hintStyle: textFieldPlaceholderTextStyle(context),
                       isDense: true,
@@ -147,7 +150,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
+                                      padding: EdgeInsets.only(
+                                          bottom: 2.h, right: 4.w),
                                       child: SvgPicture.asset(
                                         Assets.PLAY,
                                         height: 20.w,
@@ -168,7 +172,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                     ),
                                     SizedBox(width: 12.w),
                                     Padding(
-                                      padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
+                                      padding: EdgeInsets.only(
+                                          bottom: 2.h, right: 4.w),
                                       child: SvgPicture.asset(
                                         Assets.DOWNLOAD,
                                         height: 20.w,
@@ -189,7 +194,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                     ),
                                     SizedBox(width: 12.w),
                                     Padding(
-                                      padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
+                                      padding: EdgeInsets.only(
+                                          bottom: 2.h, right: 4.w),
                                       child: SvgPicture.asset(
                                         Assets.HEART,
                                         height: 20.w,
@@ -232,25 +238,4 @@ class _SearchScreenState extends State<SearchScreen> {
           )),
     );
   }
-}
-
-class SearchModel {
-  final String image;
-  final int songs;
-  final String year;
-  final String title;
-  final String artist;
-  final num plays;
-  final num download;
-  final num like;
-
-  SearchModel(
-      {required this.image,
-      required this.songs,
-      required this.year,
-      required this.title,
-      required this.artist,
-      required this.plays,
-      required this.download,
-      required this.like});
 }

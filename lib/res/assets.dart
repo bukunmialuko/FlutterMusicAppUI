@@ -19,4 +19,7 @@ class Assets {
   static const PLAY = "assets/svg/play.svg";
   static const DOWNLOAD = "assets/svg/download.svg";
   static const HEART = "assets/svg/heart.svg";
+  static const HEART_OUTLINED = "assets/svg/heart_outlined.svg";
+
+  static const MISIC_LEVEL = "assets/png/music_level.png";
 }
