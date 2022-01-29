@@ -91,7 +91,8 @@ class PlayingWidget extends StatelessWidget {
                       height: 54.w,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(Assets.PAUSE), fit: BoxFit.cover),
+                            image: AssetImage(Assets.PAUSE),
+                            fit: BoxFit.fitHeight),
                       ),
                     ),
                     SvgPicture.asset(
