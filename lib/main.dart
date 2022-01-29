@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:music_app_ui/util/navigation/navigation_service.dart';
@@ -8,7 +7,6 @@ import 'package:music_app_ui/util/navigation/routes.dart';
 import 'package:music_app_ui/util/navigation/screen_router.dart';
 
 import 'di/service_locator.dart';
-import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,13 +23,6 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: () => MaterialApp(
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate
-        ],
-        supportedLocales: S.delegate.supportedLocales,
         title: 'Music App Ui',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(),

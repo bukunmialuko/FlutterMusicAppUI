@@ -32,9 +32,6 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-  flutter_localizations:
-    sdk: flutter
-
   intl: ^0.17.0
   flutter_screenutil: ^5.0.0+2
   flutter_svg: ^0.22.0
@@ -97,7 +94,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
-flutter_intl:
-  main_locale: en_US
-  enabled: true
