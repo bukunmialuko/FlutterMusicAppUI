@@ -26,6 +26,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
     download: 1,
     plays: 2,
     songs: 2,
+    genre: "",
     like: 2,
   );
 
@@ -39,6 +40,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     ),
     SongModel(
@@ -50,6 +52,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     ),
     SongModel(
@@ -61,6 +64,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     ),
     SongModel(
@@ -72,6 +76,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     ),
     SongModel(
@@ -83,6 +88,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     ),
     SongModel(
@@ -94,6 +100,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     ),
     SongModel(
@@ -105,6 +112,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
       year: '2021',
       download: 1,
       plays: 2,
+      genre: "",
       like: 2,
     )
   ];

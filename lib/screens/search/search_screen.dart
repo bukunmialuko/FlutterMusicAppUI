@@ -25,6 +25,7 @@ class _SearchScreenState extends State<SearchScreen> {
       download: 1,
       plays: 2,
       songs: 2,
+      genre: "",
       like: 2,
     ),
     AlbumModel(
@@ -36,6 +37,7 @@ class _SearchScreenState extends State<SearchScreen> {
       download: 1,
       plays: 2,
       songs: 2,
+      genre: "",
       like: 2,
     )
   ];

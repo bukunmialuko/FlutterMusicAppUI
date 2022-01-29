@@ -7,6 +7,7 @@ class SongModel {
   final String artist;
   final num plays;
   final num download;
+  final String genre;
   final num like;
 
   SongModel(
@@ -18,5 +19,6 @@ class SongModel {
       required this.artist,
       required this.plays,
       required this.download,
+      required this.genre,
       required this.like});
 }

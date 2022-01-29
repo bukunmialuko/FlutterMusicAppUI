@@ -18,22 +18,31 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
         offstage: !widget.isCurrent,
         child: Scaffold(
           appBar: AppBar(
-            title: Text(
-              "Saved Collection",
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  fontSize: 26.sp,
-                  color: Colors.white,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.w600,
+              title: Text(
+                "Saved Collection",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontSize: 26.sp,
+                    color: Colors.white,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-            automaticallyImplyLeading: true,
-            centerTitle: false,
-            backgroundColor: Colors.black,
-            elevation: 0,
-          ),
+              automaticallyImplyLeading: true,
+              centerTitle: false,
+              backgroundColor: Colors.black,
+              elevation: 0,
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.more_vert_rounded),
+                  tooltip: 'Show Snackbar',
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('This is a snackbar')));
+                  },
+                ),
+              ]),
           backgroundColor: Colors.black,
           body: SafeArea(
             child: Column(
