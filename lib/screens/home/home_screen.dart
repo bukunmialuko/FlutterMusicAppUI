@@ -53,7 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SafeArea(
           child: ListView(
             physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-            padding: EdgeInsets.only(top: 8.h),
+            padding: EdgeInsets.only(
+              top: 8.h,
+              left: 20.w,
+            ),
             children: [
               SizedBox(
                 height: 38.h,

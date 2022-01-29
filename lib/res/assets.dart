@@ -15,4 +15,8 @@ class Assets {
   static const SKIP_BACKWARD = "assets/svg/skip_bkwd.svg";
   static const SKIP_FORWARD = "assets/svg/skip_fwd.svg";
   static const PAUSE = "assets/png/pause.png";
+
+  static const PLAY = "assets/svg/play.svg";
+  static const DOWNLOAD = "assets/svg/download.svg";
+  static const HEART = "assets/svg/heart.svg";
 }

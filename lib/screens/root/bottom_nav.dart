@@ -56,21 +56,20 @@ extension TabExt on Tabs {
 class BottomNav extends StatelessWidget {
   final Tabs currentTab;
   final ValueChanged<Tabs> didSelectTab;
-  const BottomNav(
-      {Key? key, required this.currentTab, required this.didSelectTab})
+  const BottomNav({Key? key, required this.currentTab, required this.didSelectTab})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Platform.isIOS ? 85.h : 65.h,
+      height: Platform.isIOS ? 85.h : 70.h,
       child: BottomNavigationBar(
           // currentIndex: ,
           elevation: 0,
-          unselectedLabelStyle: const TextStyle(
-              fontSize: 12, fontWeight: FontWeight.w600, height: 1.4),
-          selectedLabelStyle: const TextStyle(
-              fontSize: 12, fontWeight: FontWeight.w600, height: 1.4),
+          unselectedLabelStyle:
+              const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, height: 1.4),
+          selectedLabelStyle:
+              const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, height: 1.4),
           backgroundColor: Colors.black,
           showSelectedLabels: false,
           showUnselectedLabels: false,
@@ -84,8 +83,7 @@ class BottomNav extends StatelessWidget {
 
   BottomNavigationBarItem _buildItem(Tabs tab, BuildContext context) {
     return BottomNavigationBarItem(
-      icon: SvgPicture.asset(
-          currentTab == tab ? tab.selectedIcon : tab.unSelectedIcon),
+      icon: SvgPicture.asset(currentTab == tab ? tab.selectedIcon : tab.unSelectedIcon),
       // ignore: deprecated_member_use
       title: Text(tab.name),
     );

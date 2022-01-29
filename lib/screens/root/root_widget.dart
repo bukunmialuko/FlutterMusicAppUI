@@ -38,9 +38,12 @@ class _RootWidgetState extends State<RootWidget> {
             isCurrent: currentTab == Tabs.saved,
             key: Key(Tabs.saved.name),
           ),
-          const Align(
-            alignment: Alignment.bottomCenter,
-            child: PlayingWidget(),
+          Visibility(
+            visible: currentTab == Tabs.home || currentTab == Tabs.playlist,
+            child: const Align(
+              alignment: Alignment.bottomCenter,
+              child: PlayingWidget(),
+            ),
           )
         ],
       ),
