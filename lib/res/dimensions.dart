@@ -9,6 +9,6 @@ class Dimensions {
   static const double marginSize = 20.00;
   static const double heightSize = 12.00;
   static const double widthSize = 10.00;
-  static const double radius = 10.00;
+  static const double radius = 20.00;
   static const double buttonHeight = 45.00;
 }

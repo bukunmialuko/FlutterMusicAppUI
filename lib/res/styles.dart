@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'colors.dart';
-import 'dimensions.dart';
 
 class AppStyles {
   static var addressBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(Dimensions.radius),
+    borderRadius: BorderRadius.circular(20.00.r),
     borderSide: const BorderSide(color: AppColors.grey),
   );
   static var underLineBorder = const UnderlineInputBorder(
@@ -14,11 +13,11 @@ class AppStyles {
   );
 
   static var focusedTransparentBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(Dimensions.radius),
+    borderRadius: BorderRadius.circular(20.00.r),
     borderSide: const BorderSide(color: Colors.transparent),
   );
   static var energyBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(Dimensions.radius),
+    borderRadius: BorderRadius.circular(20.00.r),
     borderSide: const BorderSide(color: Colors.transparent),
   );
 }

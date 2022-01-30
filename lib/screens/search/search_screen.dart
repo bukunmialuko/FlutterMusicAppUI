@@ -56,24 +56,42 @@ class _SearchScreenState extends State<SearchScreen> {
         body: SafeArea(
           child: Column(
             children: [
-              Padding(
+              Container(
+                height: 40.h,
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: TextFormField(
                   readOnly: true, //false
                   autofocus: false,
                   // style: ,
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(top: 8.h),
                     prefixIcon: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.w),
-                      child: const Icon(Icons.search, color: Colors.black),
+                      child: SvgPicture.asset(
+                        Assets.SEARCH,
+                        height: 24.w,
+                        width: 24.w,
+                        color: const Color(0xb341416E),
+                        // fit: BoxFit.fill,
+                      ),
                     ),
-                    prefixIconConstraints:
-                        BoxConstraints(maxHeight: 20.w, maxWidth: 35.w),
+                    // prefixIconConstraints: BoxConstraints(
+                    //     minHeight: 24.w, maxHeight: 24.w, maxWidth: 35.w),
+                    suffixIcon: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.w),
+                      child: SvgPicture.asset(
+                        Assets.CLOSE,
+                        height: 24.w,
+                        width: 24.w,
+                        color: Colors.black,
+                        // fit: BoxFit.fill,
+                      ),
+                    ),
                     hintText: "Mercy Chinwo",
                     // hintStyle: textFieldPlaceholderTextStyle(context),
                     isDense: true,
                     filled: true,
-                    fillColor: Colors.grey,
+                    fillColor: Colors.white,
                     focusedBorder: AppStyles.focusedTransparentBorder,
                     disabledBorder: AppStyles.focusedTransparentBorder,
                     enabledBorder: AppStyles.focusedTransparentBorder,

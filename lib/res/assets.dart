@@ -24,4 +24,8 @@ class Assets {
   static const MISIC_LEVEL = "assets/png/music_level.png";
 
   static const SONG = "assets/svg/song.svg";
+
+  static const MERCY_CHINWO = "assets/png/chinwe_owo.png";
+  static const SEARCH = "assets/svg/search.svg";
+  static const CLOSE = "assets/svg/close.svg";
 }
