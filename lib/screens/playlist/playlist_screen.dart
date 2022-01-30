@@ -221,6 +221,8 @@ class _PlayListScreenState extends State<PlayListScreen> {
             Expanded(
               child: ListView.separated(
                 padding: EdgeInsets.only(top: 17.h),
+                physics: const BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics()),
                 itemBuilder: (c, i) {
                   return Container(
                     padding: EdgeInsets.only(left: 29.w, right: 34.w),

@@ -56,6 +56,8 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
         backgroundColor: Colors.black,
         body: ListView.separated(
           padding: EdgeInsets.only(left: 20.w, right: 16.w, top: 20.h),
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
           itemBuilder: (c, i) {
             return SizedBox(
               width: 85.w,
