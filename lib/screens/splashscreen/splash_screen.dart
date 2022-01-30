@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    super.initState();
+    // super.initState();
     _animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 4));
 
@@ -27,17 +27,9 @@ class _SplashScreenState extends State<SplashScreen>
       if (status == AnimationStatus.completed) {
         GetIt.I.get<NavigationService>().to(routeName: Routes.home);
 
-        // Navigator.of(context).pushReplacement(MaterialPageRoute(
-        //   builder: (context) => const RootWidget(),
-        // ));
       }
     });
     super.initState();
-    // Future.delayed(Duration(seconds: 4), () {
-    //   Navigator.of(context).pushReplacement(MaterialPageRoute(
-    //     builder: (context) => const RootWidget(),
-    //   ));
-    // });
   }
 
   @override

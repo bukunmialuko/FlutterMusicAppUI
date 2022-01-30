@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:music_app_ui/models/album_model.dart';
 import 'package:music_app_ui/models/song_model.dart';
 import 'package:music_app_ui/res/assets.dart';
+import 'package:music_app_ui/util/navigation/navigation_service.dart';
+import 'package:music_app_ui/util/navigation/routes.dart';
 
 class PlayListScreen extends StatefulWidget {
   final bool isCurrent;
@@ -224,88 +227,95 @@ class _PlayListScreenState extends State<PlayListScreen> {
                 physics: const BouncingScrollPhysics(
                     parent: AlwaysScrollableScrollPhysics()),
                 itemBuilder: (c, i) {
-                  return Container(
-                    padding: EdgeInsets.only(left: 29.w, right: 34.w),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(right: 22.w),
-                          child: i == 2
-                              ? Container(
-                                  width: 32.2,
-                                  height: 29.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    image: const DecorationImage(
-                                      image: AssetImage(Assets.MISIC_LEVEL),
-                                      fit: BoxFit.cover,
+                  return InkWell(
+                    onTap: () {
+                      GetIt.I
+                          .get<NavigationService>()
+                          .to(routeName: Routes.playingNow);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.only(left: 29.w, right: 34.w),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(right: 22.w),
+                            child: i == 2
+                                ? Container(
+                                    width: 32.2,
+                                    height: 29.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      image: const DecorationImage(
+                                        image: AssetImage(Assets.MISIC_LEVEL),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  )
+                                : Text(
+                                    formatter.format(i + 1),
+                                    maxLines: 1,
+                                    style: GoogleFonts.montserrat(
+                                      textStyle: TextStyle(
+                                        fontSize: 24.sp,
+                                        color: Colors.white,
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
                                   ),
-                                )
-                              : Text(
-                                  formatter.format(i + 1),
-                                  maxLines: 1,
-                                  style: GoogleFonts.montserrat(
-                                    textStyle: TextStyle(
-                                      fontSize: 24.sp,
-                                      color: Colors.white,
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                          ),
+                          Expanded(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                songs[i].title,
+                                maxLines: 1,
+                                style: GoogleFonts.montserrat(
+                                  textStyle: TextStyle(
+                                    fontSize: 18.sp,
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                ),
-                        ),
-                        Expanded(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              songs[i].title,
-                              maxLines: 1,
-                              style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                  fontSize: 18.sp,
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
+                              SizedBox(height: 4.h),
+                              Text(
+                                songs[i].artist,
+                                maxLines: 1,
+                                style: GoogleFonts.montserrat(
+                                  textStyle: TextStyle(
+                                    fontSize: 14.sp,
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          )),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
+                            child: SvgPicture.asset(
+                              Assets.HEART_OUTLINED,
+                              height: 24.w,
+                              width: 24.w,
+                              fit: BoxFit.fill,
                             ),
-                            SizedBox(height: 4.h),
-                            Text(
-                              songs[i].artist,
-                              maxLines: 1,
-                              style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                  fontSize: 14.sp,
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            )
-                          ],
-                        )),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
-                          child: SvgPicture.asset(
-                            Assets.HEART_OUTLINED,
-                            height: 24.w,
-                            width: 24.w,
-                            fit: BoxFit.fill,
                           ),
-                        ),
-                        SizedBox(width: 28.w),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
-                          child: SvgPicture.asset(
-                            Assets.DOWNLOAD,
-                            height: 24.w,
-                            width: 24.w,
-                            fit: BoxFit.fill,
+                          SizedBox(width: 28.w),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 2.h, right: 4.w),
+                            child: SvgPicture.asset(
+                              Assets.DOWNLOAD,
+                              height: 24.w,
+                              width: 24.w,
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },
