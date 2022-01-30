@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app_ui/models/album_model.dart';
 import 'package:music_app_ui/res/assets.dart';
 import 'package:music_app_ui/res/styles.dart';
+import 'package:music_app_ui/util/navigation/navigation_service.dart';
+import 'package:music_app_ui/util/navigation/routes.dart';
 
 class SearchScreen extends StatefulWidget {
   final bool isCurrent;
@@ -115,132 +118,139 @@ class _SearchScreenState extends State<SearchScreen> {
                   physics: const BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   itemBuilder: (c, i) {
-                    return SizedBox(
-                      height: 90.h,
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 85.w,
-                            height: 85.w,
-                            margin: EdgeInsets.only(right: 14.w),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.r),
-                              image: DecorationImage(
-                                image: AssetImage(models[i].image),
-                                fit: BoxFit.cover,
+                    return InkWell(
+                      onTap: () {
+                        GetIt.I
+                            .get<NavigationService>()
+                            .to(routeName: Routes.searchResult);
+                      },
+                      child: SizedBox(
+                        height: 90.h,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 85.w,
+                              height: 85.w,
+                              margin: EdgeInsets.only(right: 14.w),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.r),
+                                image: DecorationImage(
+                                  image: AssetImage(models[i].image),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Album - ${models[i].songs} songs - ${models[i].year}",
-                                style: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
-                                    fontSize: 14.sp,
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w400,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Album - ${models[i].songs} songs - ${models[i].year}",
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      fontSize: 14.sp,
+                                      color: Colors.white,
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Text(
-                                models[i].title,
-                                style: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
-                                    fontSize: 20.sp,
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w600,
+                                Text(
+                                  models[i].title,
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      fontSize: 20.sp,
+                                      color: Colors.white,
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Text(
-                                models[i].artist,
-                                style: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
-                                    fontSize: 14.sp,
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w400,
+                                Text(
+                                  models[i].artist,
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      fontSize: 14.sp,
+                                      color: Colors.white,
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        bottom: 2.h, right: 4.w),
-                                    child: SvgPicture.asset(
-                                      Assets.PLAY,
-                                      height: 20.w,
-                                      width: 20.w,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Text(
-                                    models[i].plays.toString(),
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: TextStyle(
-                                        fontSize: 14.sp,
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.w600,
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          bottom: 2.h, right: 4.w),
+                                      child: SvgPicture.asset(
+                                        Assets.PLAY,
+                                        height: 20.w,
+                                        width: 20.w,
+                                        fit: BoxFit.fill,
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(width: 12.w),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        bottom: 2.h, right: 4.w),
-                                    child: SvgPicture.asset(
-                                      Assets.DOWNLOAD,
-                                      height: 20.w,
-                                      width: 20.w,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Text(
-                                    models[i].download.toString(),
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: TextStyle(
-                                        fontSize: 14.sp,
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.w600,
+                                    Text(
+                                      models[i].plays.toString(),
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          fontSize: 14.sp,
+                                          color: Colors.white,
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(width: 12.w),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        bottom: 2.h, right: 4.w),
-                                    child: SvgPicture.asset(
-                                      Assets.HEART,
-                                      height: 20.w,
-                                      width: 20.w,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Text(
-                                    models[i].plays.toString(),
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: TextStyle(
-                                        fontSize: 14.sp,
-                                        color: Colors.white,
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.w600,
+                                    SizedBox(width: 12.w),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          bottom: 2.h, right: 4.w),
+                                      child: SvgPicture.asset(
+                                        Assets.DOWNLOAD,
+                                        height: 20.w,
+                                        width: 20.w,
+                                        fit: BoxFit.fill,
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(width: 12.w)
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                                    Text(
+                                      models[i].download.toString(),
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          fontSize: 14.sp,
+                                          color: Colors.white,
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 12.w),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          bottom: 2.h, right: 4.w),
+                                      child: SvgPicture.asset(
+                                        Assets.HEART,
+                                        height: 20.w,
+                                        width: 20.w,
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                    Text(
+                                      models[i].plays.toString(),
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          fontSize: 14.sp,
+                                          color: Colors.white,
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 12.w)
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     );
                   },

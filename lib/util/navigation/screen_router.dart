@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_function_declarations_over_variables
 
 import 'package:flutter/material.dart';
-import 'package:music_app_ui/screens/home/home_screen.dart';
 import 'package:music_app_ui/screens/root/root_widget.dart';
-import 'package:music_app_ui/screens/search/search_screen.dart';
+import 'package:music_app_ui/screens/search_result/search_result_screen.dart';
 import 'package:music_app_ui/screens/splashscreen/splash_screen.dart';
 
 import 'fade_route.dart';
@@ -24,6 +23,11 @@ class ScreenRouter {
       case Routes.home:
         return FadeRoute(
           page: const RootWidget(),
+        );
+
+      case Routes.searchResult:
+        return FadeRoute(
+          page: const SearchResultScreen(),
         );
 
       // case Routes.home:
