@@ -13,6 +13,17 @@ A new Flutter project.
 - A little knowledge of Dart and Flutter
 - A brain to think 🤓🤓
 
+
+<br />
+
+## 📸 Banner
+
+<p align="center">
+<img src="art/banner/banner.png" alt="splash.png" hspace="2"/>
+</p>
+
+<br />
+
 <br />
 
 ## 📸 ScreenShots
