@@ -1,6 +1,6 @@
-# music_app_ui
+# Music App UI
 
-A new Flutter project.
+A music app template
 
 
 
@@ -48,6 +48,10 @@ A new Flutter project.
 ## 🤓 Author
 
 **Bukunmi Aluko**
+<a href="https://www.linkedin.com/in/bukunmi-aluko/">
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>&nbsp;&nbsp;
+
 (https://www.linkedin.com/in/bukunmi-aluko)
 
 <br />
