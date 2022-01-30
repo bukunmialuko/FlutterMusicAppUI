@@ -1,8 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app_ui/res/assets.dart';
-import 'dart:io';
 
 enum Tabs { home, search, playlist, saved }
 
@@ -62,7 +63,8 @@ class BottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: Colors.black,
       height: Platform.isIOS ? 85.h : 70.h,
       child: BottomNavigationBar(
           elevation: 0,
@@ -85,8 +87,7 @@ class BottomNav extends StatelessWidget {
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(
           currentTab == tab ? tab.selectedIcon : tab.unSelectedIcon),
-      // ignore: deprecated_member_use
-      title: Text(tab.name),
+      label: tab.name,
     );
   }
 }

@@ -22,4 +22,6 @@ class Assets {
   static const HEART_OUTLINED = "assets/svg/heart_outlined.svg";
 
   static const MISIC_LEVEL = "assets/png/music_level.png";
+
+  static const SONG = "assets/svg/song.svg";
 }
