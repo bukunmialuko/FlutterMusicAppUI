@@ -159,7 +159,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   onTap: () {},
                 ),
               ),
-              SizedBox(height: 35.h),
+              SizedBox(height: 25.h),
               Expanded(
                 child: ListView.separated(
                   padding: EdgeInsets.only(left: 22.w, right: 23.w),
