@@ -132,7 +132,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
         ),
         body: Column(
           children: [
-            SizedBox(height: 27.h),
+            SizedBox(height: 16.h),
             Container(
               height: 127.h,
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
