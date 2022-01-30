@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:music_app_ui/res/assets.dart';
+import 'package:music_app_ui/util/navigation/navigation_service.dart';
+import 'package:music_app_ui/util/navigation/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,15 +18,13 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    // super.initState();
     _animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 4));
 
     _animationController.forward();
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        // GetIt.I.get<NavigationService>().to(routeName: Routes.home);
-
+        GetIt.I.get<NavigationService>().to(routeName: Routes.home);
       }
     });
     super.initState();
