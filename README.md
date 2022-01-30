@@ -43,7 +43,11 @@ A music app template
 ## 🤓 Design Credit
 
 **Victoria Okwuokenye**
-(https://www.linkedin.com/in/victoria-okwuokenye/)
+
+<a href="https://www.linkedin.com/in/victoria-okwuokenye/">
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>&nbsp;&nbsp;
+
 
 ## 🤓 Author
 
