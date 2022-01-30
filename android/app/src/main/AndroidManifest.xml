@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.music_app_ui">
    <application
-        android:label="music_app_ui"
+        android:label="Music App UI"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
