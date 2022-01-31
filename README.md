@@ -65,3 +65,6 @@ Leave a 🌟
 
 Follow for update. 😃
 
+## Development version :hammer:
+- [APK (direct download)](https://github.com/bukunmialuko/FlutterMusicAppUI/releases/download/v1.0.0/app-release.apk)
+
