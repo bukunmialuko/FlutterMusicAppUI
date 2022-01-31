@@ -29,13 +29,13 @@ A music app template
 ## 📸 ScreenShots
 
 <p align="center">
-<img src="art/screenshots/splash.png" alt="splash.png" width="200px" hspace="2"/>
-<img src="art/screenshots/home.png" alt="home" width="200px" hspace="2"/>
-<img src="art/screenshots/search.png" alt="search" width="200px" hspace="2"/>
-<img src="art/screenshots/search_result.png" alt="search_result" width="200px" hspace="2"/>
-<img src="art/screenshots/playlist.png" alt="playlist" width="200px" hspace="2"/> 
-<img src="art/screenshots/playing_now.png" alt="playing_now" width="200px" hspace="2"/> 
-<img src="art/screenshots/saved.png" alt="saved" width="200px" hspace="2"/> 
+<img src="art/screenshots/splash.png" alt="splash.png" width="400px" hspace="2"/>
+<img src="art/screenshots/home.png" alt="home" width="400px" hspace="2"/>
+<img src="art/screenshots/search.png" alt="search" width="400px" hspace="2"/>
+<img src="art/screenshots/search_result.png" alt="search_result" width="400px" hspace="2"/>
+<img src="art/screenshots/playlist.png" alt="playlist" width="400px" hspace="2"/> 
+<img src="art/screenshots/playing_now.png" alt="playing_now" width="400px" hspace="2"/> 
+<img src="art/screenshots/saved.png" alt="saved" width="400px" hspace="2"/> 
 </p>
 
 <br />
