@@ -22,7 +22,6 @@ class PlayingWidget extends StatelessWidget {
               topRight: Radius.circular(20.r),
             ),
           ),
-          height: 66.h,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +32,7 @@ class PlayingWidget extends StatelessWidget {
                 margin: EdgeInsets.only(
                     top: 8.h, bottom: 3.h, left: 12.w, right: 15.w),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
+                  borderRadius: BorderRadius.circular(16.r),
                   image: const DecorationImage(
                     image: AssetImage(Assets.SPLASH_BACKGROUND_IMG),
                     fit: BoxFit.cover,

@@ -173,12 +173,12 @@ class _SearchScreenState extends State<SearchScreen> {
                             .to(routeName: Routes.searchResult);
                       },
                       child: SizedBox(
-                        height: 90.h,
+                        // height: 90.h,
                         child: Row(
                           children: [
                             Container(
-                              width: 85.w,
-                              height: 85.w,
+                              width: 85.r,
+                              height: 85.r,
                               margin: EdgeInsets.only(right: 14.w),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20.r),

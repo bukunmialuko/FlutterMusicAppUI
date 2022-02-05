@@ -52,7 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: SafeArea(
           child: ListView(
-            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
             padding: EdgeInsets.only(
               top: 8.h,
               left: 20.w,
@@ -62,14 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 38.h,
                 width: double.infinity,
                 child: ListView.separated(
-                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,
                   itemBuilder: (c, i) {
                     return Container(
                       height: 38.h,
                       decoration: BoxDecoration(
-                        color: selectedCategoryIndex == i ? const Color(0x66C4C4C4) : Colors.black,
+                        color: selectedCategoryIndex == i
+                            ? const Color(0x66C4C4C4)
+                            : Colors.black,
                         border: Border.all(
                           color: Colors.white,
                           width: 1,
@@ -115,18 +119,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: 127.h,
+                height: 127.r,
                 width: double.infinity,
                 child: ListView.separated(
-                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
                   scrollDirection: Axis.horizontal,
                   itemCount: trendingAlbums.length,
+                  padding: EdgeInsets.zero,
                   itemBuilder: (c, i) {
                     return Container(
-                      width: 127.w,
-                      height: 127.w,
+                      width: 127.r,
+                      height: 127.r,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.r),
+                        borderRadius: BorderRadius.circular(16.r),
                         image: DecorationImage(
                           image: AssetImage(trendingAlbums[i]),
                           fit: BoxFit.cover,
@@ -156,18 +162,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: 127.h,
+                height: 127.r,
                 width: double.infinity,
                 child: ListView.separated(
-                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
                   scrollDirection: Axis.horizontal,
                   itemCount: trendingSongs.length,
+                  padding: EdgeInsets.zero,
                   itemBuilder: (c, i) {
                     return Container(
-                      width: 127.w,
-                      height: 127.w,
+                      width: 127.r,
+                      height: 127.r,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.r),
+                        borderRadius: BorderRadius.circular(16.r),
                         image: DecorationImage(
                           image: AssetImage(trendingSongs[i]),
                           fit: BoxFit.cover,

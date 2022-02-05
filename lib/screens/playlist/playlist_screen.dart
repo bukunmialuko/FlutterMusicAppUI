@@ -137,16 +137,16 @@ class _PlayListScreenState extends State<PlayListScreen> {
           children: [
             SizedBox(height: 16.h),
             Container(
-              height: 127.h,
+              height: 127.r,
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
               child: Row(
                 children: [
                   Container(
-                    width: 127.w,
-                    height: 127.w,
+                    width: 127.r,
+                    height: 127.r,
                     margin: EdgeInsets.only(right: 14.w),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.r),
+                      borderRadius: BorderRadius.circular(16.r),
                       image: DecorationImage(
                         image: AssetImage(album.image),
                         fit: BoxFit.cover,
@@ -155,8 +155,8 @@ class _PlayListScreenState extends State<PlayListScreen> {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(height: 9.h),
                       Text(
                         "Album - ${album.songs} songs - ${album.year}",
                         style: GoogleFonts.montserrat(
@@ -168,7 +168,6 @@ class _PlayListScreenState extends State<PlayListScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 7.h),
                       Text(
                         album.title,
                         style: GoogleFonts.montserrat(
@@ -180,7 +179,6 @@ class _PlayListScreenState extends State<PlayListScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 5.h),
                       Text(
                         album.artist,
                         style: GoogleFonts.montserrat(

@@ -13,6 +13,8 @@ A music app template
 - A little knowledge of Dart and Flutter
 - A brain to think 🤓🤓
 
+## build apk
+flutter build apk
 
 <br />
 
