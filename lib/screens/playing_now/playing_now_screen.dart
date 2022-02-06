@@ -33,7 +33,7 @@ class _PlayingNowScreenState extends State<PlayingNowScreen> {
             // fit: BoxFit.fill,
           ),
         ),
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         elevation: 0,
       ),

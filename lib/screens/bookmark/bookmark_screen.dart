@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app_ui/models/collection_model.dart';
 import 'package:music_app_ui/res/assets.dart';
+import 'package:music_app_ui/util/navigation/navigation_service.dart';
+import 'package:music_app_ui/util/navigation/routes.dart';
 
 class BookMarkScreen extends StatefulWidget {
   final bool isCurrent;
@@ -39,7 +42,21 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
                 ),
               ),
             ),
-            automaticallyImplyLeading: true,
+            leading: GestureDetector(
+              onTap: () {
+                GetIt.I
+                    .get<NavigationService>()
+                    .clearAllTo(routeName: Routes.home);
+              },
+              child: SvgPicture.asset(
+                Assets.BACK,
+                height: 24,
+                width: 24,
+                color: const Color(0xffffffff),
+                // fit: BoxFit.fill,
+              ),
+            ),
+            automaticallyImplyLeading: false,
             centerTitle: false,
             backgroundColor: Colors.black,
             elevation: 0,

@@ -102,7 +102,9 @@ class _SearchScreenState extends State<SearchScreen> {
         appBar: AppBar(
           leading: GestureDetector(
             onTap: () {
-              GetIt.I.get<NavigationService>().back();
+              GetIt.I
+                  .get<NavigationService>()
+                  .clearAllTo(routeName: Routes.home);
             },
             child: SvgPicture.asset(
               Assets.BACK,
