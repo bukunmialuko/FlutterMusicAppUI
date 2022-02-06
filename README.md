@@ -14,7 +14,7 @@ A music app template
 - A brain to think 🤓🤓
 
 ## build apk
-flutter build apk 
+flutter build apk
 
 <br />
 

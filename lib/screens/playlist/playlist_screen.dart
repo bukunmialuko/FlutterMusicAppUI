@@ -129,13 +129,25 @@ class _PlayListScreenState extends State<PlayListScreen> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              GetIt.I.get<NavigationService>().back();
+            },
+            child: SvgPicture.asset(
+              Assets.BACK,
+              height: 24,
+              width: 24,
+              color: const Color(0xffffffff),
+              // fit: BoxFit.fill,
+            ),
+          ),
           automaticallyImplyLeading: true,
           backgroundColor: Colors.black,
           elevation: 0,
         ),
         body: Column(
           children: [
-            SizedBox(height: 16.h),
+            SizedBox(height: 8.h),
             Container(
               height: 127.r,
               padding: EdgeInsets.only(left: 20.w, right: 20.w),

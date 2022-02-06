@@ -100,6 +100,18 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              GetIt.I.get<NavigationService>().back();
+            },
+            child: SvgPicture.asset(
+              Assets.BACK,
+              height: 24,
+              width: 24,
+              color: const Color(0xffffffff),
+              // fit: BoxFit.fill,
+            ),
+          ),
           automaticallyImplyLeading: true,
           backgroundColor: Colors.black,
           elevation: 0,

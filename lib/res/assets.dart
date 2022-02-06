@@ -33,4 +33,5 @@ class Assets {
 
   static const SEARCH = "assets/svg/search.svg";
   static const CLOSE = "assets/svg/close.svg";
+  static const BACK = "assets/svg/back.svg";
 }
