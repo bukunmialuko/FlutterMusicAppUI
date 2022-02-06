@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app_ui/res/assets.dart';
+import 'package:music_app_ui/util/navigation/navigation_service.dart';
 
 class PlayingNowScreen extends StatefulWidget {
   const PlayingNowScreen({Key? key}) : super(key: key);
@@ -19,6 +21,18 @@ class _PlayingNowScreenState extends State<PlayingNowScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            GetIt.I.get<NavigationService>().back();
+          },
+          child: SvgPicture.asset(
+            Assets.BACK,
+            height: 24,
+            width: 24,
+            color: const Color(0xffffffff),
+            // fit: BoxFit.fill,
+          ),
+        ),
         automaticallyImplyLeading: true,
         backgroundColor: Colors.black,
         elevation: 0,
