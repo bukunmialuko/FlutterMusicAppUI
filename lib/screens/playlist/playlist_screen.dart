@@ -13,10 +13,10 @@ import 'package:music_app_ui/util/navigation/routes.dart';
 class PlayListScreen extends StatefulWidget {
   final bool isCurrent;
 
-  const PlayListScreen({Key? key, required this.isCurrent}) : super(key: key);
+  const PlayListScreen({super.key, required this.isCurrent});
 
   @override
-  _PlayListScreenState createState() => _PlayListScreenState();
+  State<PlayListScreen> createState() => _PlayListScreenState();
 }
 
 class _PlayListScreenState extends State<PlayListScreen> {
@@ -139,8 +139,10 @@ class _PlayListScreenState extends State<PlayListScreen> {
               Assets.BACK,
               height: 24,
               width: 24,
-              color: const Color(0xffffffff),
-              // fit: BoxFit.fill,
+              colorFilter: const ColorFilter.mode(
+                Color(0xffffffff),
+                BlendMode.srcIn,
+              ),
             ),
           ),
           automaticallyImplyLeading: true,

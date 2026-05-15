@@ -11,10 +11,10 @@ import 'package:music_app_ui/util/navigation/routes.dart';
 class BookMarkScreen extends StatefulWidget {
   final bool isCurrent;
 
-  const BookMarkScreen({Key? key, required this.isCurrent}) : super(key: key);
+  const BookMarkScreen({super.key, required this.isCurrent});
 
   @override
-  _BookMarkScreenState createState() => _BookMarkScreenState();
+  State<BookMarkScreen> createState() => _BookMarkScreenState();
 }
 
 class _BookMarkScreenState extends State<BookMarkScreen> {
@@ -52,8 +52,10 @@ class _BookMarkScreenState extends State<BookMarkScreen> {
                 Assets.BACK,
                 height: 24,
                 width: 24,
-                color: const Color(0xffffffff),
-                // fit: BoxFit.fill,
+                colorFilter: const ColorFilter.mode(
+                  Color(0xffffffff),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
             automaticallyImplyLeading: false,

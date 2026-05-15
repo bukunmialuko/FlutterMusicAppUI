@@ -11,10 +11,10 @@ import 'package:music_app_ui/util/navigation/routes.dart';
 
 class SearchScreen extends StatefulWidget {
   final bool isCurrent;
-  const SearchScreen({Key? key, required this.isCurrent}) : super(key: key);
+  const SearchScreen({super.key, required this.isCurrent});
 
   @override
-  _SearchScreenState createState() => _SearchScreenState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
 class _SearchScreenState extends State<SearchScreen> {
@@ -110,8 +110,10 @@ class _SearchScreenState extends State<SearchScreen> {
               Assets.BACK,
               height: 24,
               width: 24,
-              color: const Color(0xffffffff),
-              // fit: BoxFit.fill,
+              colorFilter: const ColorFilter.mode(
+                Color(0xffffffff),
+                BlendMode.srcIn,
+              ),
             ),
           ),
           automaticallyImplyLeading: true,
@@ -136,8 +138,10 @@ class _SearchScreenState extends State<SearchScreen> {
                         Assets.SEARCH,
                         height: 24.w,
                         width: 24.w,
-                        color: const Color(0xb341416E),
-                        // fit: BoxFit.fill,
+                        colorFilter: const ColorFilter.mode(
+                          Color(0xb341416E),
+                          BlendMode.srcIn,
+                        ),
                       ),
                     ),
                     // prefixIconConstraints: BoxConstraints(
@@ -148,8 +152,10 @@ class _SearchScreenState extends State<SearchScreen> {
                         Assets.CLOSE,
                         height: 24.w,
                         width: 24.w,
-                        color: Colors.black,
-                        // fit: BoxFit.fill,
+                        colorFilter: const ColorFilter.mode(
+                          Colors.black,
+                          BlendMode.srcIn,
+                        ),
                       ),
                     ),
                     hintText: "Mercy Chinwo",
@@ -318,7 +324,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   },
                   separatorBuilder: (c, i) {
                     return Container(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       height: 1,
                       margin: EdgeInsets.symmetric(vertical: 12.h),
                     );

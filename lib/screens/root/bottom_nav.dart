@@ -18,8 +18,6 @@ extension TabExt on Tabs {
         return "Playlist";
       case Tabs.saved:
         return "Saved";
-      default:
-        return "";
     }
   }
 
@@ -33,8 +31,6 @@ extension TabExt on Tabs {
         return Assets.MUSIC_SELECTED_TAB;
       case Tabs.saved:
         return Assets.BOOKMARK_SELECTED_TAB;
-      default:
-        return "";
     }
   }
 
@@ -48,8 +44,6 @@ extension TabExt on Tabs {
         return Assets.MUSIC_UNSELECTED_TAB;
       case Tabs.saved:
         return Assets.BOOKMARK_UNSELECTED_TAB;
-      default:
-        return "";
     }
   }
 }
@@ -57,9 +51,11 @@ extension TabExt on Tabs {
 class BottomNav extends StatelessWidget {
   final Tabs currentTab;
   final ValueChanged<Tabs> didSelectTab;
-  const BottomNav(
-      {Key? key, required this.currentTab, required this.didSelectTab})
-      : super(key: key);
+  const BottomNav({
+    super.key,
+    required this.currentTab,
+    required this.didSelectTab,
+  });
 
   @override
   Widget build(BuildContext context) {

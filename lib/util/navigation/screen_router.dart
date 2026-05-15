@@ -23,7 +23,7 @@ class ScreenRouter {
 
       case Routes.home:
         return FadeRoute(
-          page: const RootWidget(),
+          page: const RootView(),
         );
 
       case Routes.searchResult:

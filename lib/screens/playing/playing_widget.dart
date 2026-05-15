@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app_ui/res/assets.dart';
 
 class PlayingWidget extends StatelessWidget {
-  const PlayingWidget({Key? key}) : super(key: key);
+  const PlayingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

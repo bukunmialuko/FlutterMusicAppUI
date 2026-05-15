@@ -6,21 +6,20 @@ import 'package:music_app_ui/screens/home/home_screen.dart';
 import 'package:music_app_ui/screens/playlist/playlist_screen.dart';
 import 'package:music_app_ui/screens/search/search_screen.dart';
 
-class RootWidget extends StatefulWidget {
-  const RootWidget({Key? key}) : super(key: key);
+class RootView extends StatefulWidget {
+  const RootView({super.key});
 
   @override
-  _RootWidgetState createState() => _RootWidgetState();
+  State<RootView> createState() => _RootViewState();
 }
 
-class _RootWidgetState extends State<RootWidget> {
+class _RootViewState extends State<RootView> {
   Tabs currentTab = Tabs.home;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        // fit: StackFit.expand,
         children: [
           HomeScreen(
             isCurrent: currentTab == Tabs.home,

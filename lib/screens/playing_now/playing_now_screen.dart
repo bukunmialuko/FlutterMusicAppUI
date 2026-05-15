@@ -7,10 +7,10 @@ import 'package:music_app_ui/res/assets.dart';
 import 'package:music_app_ui/util/navigation/navigation_service.dart';
 
 class PlayingNowScreen extends StatefulWidget {
-  const PlayingNowScreen({Key? key}) : super(key: key);
+  const PlayingNowScreen({super.key});
 
   @override
-  _PlayingNowScreenState createState() => _PlayingNowScreenState();
+  State<PlayingNowScreen> createState() => _PlayingNowScreenState();
 }
 
 class _PlayingNowScreenState extends State<PlayingNowScreen> {
@@ -29,8 +29,10 @@ class _PlayingNowScreenState extends State<PlayingNowScreen> {
             Assets.BACK,
             height: 24,
             width: 24,
-            color: const Color(0xffffffff),
-            // fit: BoxFit.fill,
+            colorFilter: const ColorFilter.mode(
+              Color(0xffffffff),
+              BlendMode.srcIn,
+            ),
           ),
         ),
         automaticallyImplyLeading: false,

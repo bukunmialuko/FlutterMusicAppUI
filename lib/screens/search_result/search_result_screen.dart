@@ -7,10 +7,10 @@ import 'package:music_app_ui/res/assets.dart';
 import 'package:music_app_ui/util/navigation/navigation_service.dart';
 
 class SearchResultScreen extends StatefulWidget {
-  const SearchResultScreen({Key? key}) : super(key: key);
+  const SearchResultScreen({super.key});
 
   @override
-  _SearchResultScreenState createState() => _SearchResultScreenState();
+  State<SearchResultScreen> createState() => _SearchResultScreenState();
 }
 
 class _SearchResultScreenState extends State<SearchResultScreen> {
@@ -27,8 +27,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
             Assets.BACK,
             height: 24,
             width: 24,
-            color: const Color(0xffffffff),
-            // fit: BoxFit.fill,
+            colorFilter: const ColorFilter.mode(
+              Color(0xffffffff),
+              BlendMode.srcIn,
+            ),
           ),
         ),
         automaticallyImplyLeading: true,

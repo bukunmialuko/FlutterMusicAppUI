@@ -10,22 +10,23 @@ import 'di/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await ServiceLocator().setUp();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      builder: () => MaterialApp(
+      minTextAdapt: true,
+      builder: (context, child) => MaterialApp(
         title: 'Music App Ui',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(),
+        theme: ThemeData(useMaterial3: true),
         themeMode: ThemeMode.light,
         navigatorKey: GetIt.I.get<NavigationService>().navigatorKey,
         initialRoute: Routes.initial,

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app_ui/res/assets.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isCurrent;
 
-  const HomeScreen({Key? key, required this.isCurrent}) : super(key: key);
+  const HomeScreen({super.key, required this.isCurrent});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -70,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (c, i) {
                     return Container(
                       height: 38.h,
+                      padding: EdgeInsets.only(left: 21.w, right: 22.w),
                       decoration: BoxDecoration(
                         color: selectedCategoryIndex == i
                             ? const Color(0x66C4C4C4)
@@ -83,18 +83,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       child: Center(
-                          child: Text(
-                        categories[i],
-                        style: GoogleFonts.workSans(
-                          textStyle: TextStyle(
-                            fontSize: 20.sp,
-                            color: Colors.white,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w600,
+                        child: Text(
+                          categories[i],
+                          style: GoogleFonts.workSans(
+                            textStyle: TextStyle(
+                              fontSize: 20.sp,
+                              color: Colors.white,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
-                      )),
-                      padding: EdgeInsets.only(left: 21.w, right: 22.w),
+                      ),
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
